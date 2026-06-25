@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste de Checkout</title>
+</head>
+<body>
+    <h1>Teste de Checkout</h1>
+    <button id="testBtn">Enviar Pedido Teste</button>
+    <pre id="response"></pre>
+
+    <script>
+        document.getElementById("testBtn").addEventListener("click", async () => {
+            const payload = {
+                items: [
+                    {
+                        id: 1,
+                        nome: "iPhone 15",
+                        precoValor: 5999,
+                        quantidade: 1
+                    }
+                ],
+                total: 5999,
+                customer: {
+                    origem: "teste",
+                    observacao: "Pedido de teste"
+                }
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/api/pedidos", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+                document.getElementById("response").textContent = 
+                    `Status: ${response.status}\n\n${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                document.getElementById("response").textContent = `Erro: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": 1782398271616,
+    "items": [
+      {
+        "id": 1,
+        "nome": "iPhone 15",
+        "precoValor": 5999,
+        "quantidade": 1
+      }
+    ],
+    "total": 5999,
+    "customer": {
+      "origem": "teste",
+      "observacao": "Pedido de teste"
+    },
+    "dataCriacao": "2026-06-25T14:37:51.616Z",
+    "status": "recebido"
+  },
+  {
+    "id": 1782398943312,
+    "items": [
+      {
+        "id": 1,
+        "nome": "iPhone 15",
+        "precoValor": 5999,
+        "quantidade": 1
+      }
+    ],
+    "total": 5999,
+    "customer": {
+      "origem": "teste",
+      "observacao": "Pedido de teste"
+    },
+    "dataCriacao": "2026-06-25T14:49:03.312Z",
+    "status": "recebido"
+  }
+]
